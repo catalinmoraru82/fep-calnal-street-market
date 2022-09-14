@@ -1,2 +1,4 @@
 # Frontend Practice Project
-This is [https://www.frontendpractice.com/projects/canal-street-market]Frontend Practice project where I clone a website: Canal Street Market
+This is [Frontend Practice project](https://www.frontendpractice.com/projects/canal-street-market) where I clone a website: Canal Street Market.
+
+For now it's only on desktop, mobile coming soon
