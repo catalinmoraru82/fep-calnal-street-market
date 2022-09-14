@@ -1,0 +1,293 @@
+h1 {
+  font-weight: inherit;
+  font-size: inherit; }
+
+h2 {
+  font-weight: inherit;
+  font-size: inherit; }
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh; }
+
+.Main {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+  color: #000;
+  font-family: "Space Mono", monospace;
+  font-size: 14px; }
+
+.Home {
+  width: 100%; }
+
+.WebsiteSection {
+  display: none; }
+  @media screen and (min-width: 769px) {
+    .WebsiteSection {
+      position: relative;
+      width: 65px;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .WebsiteSection--Food {
+        background-color: #5ea3ec;
+        transform: translateY(-100%);
+        animation: slideFromAbove cubic-bezier(0, 0, 0, 1) 1s 1500ms forwards; }
+      .WebsiteSection--Retail {
+        background-color: #f64444;
+        transform: translateY(-100%);
+        animation: slideFromAbove cubic-bezier(0, 0, 0, 1) 1s 1300ms forwards; }
+      .WebsiteSection--Community {
+        background-color: #ffb400;
+        transform: translateY(-100%);
+        animation: slideFromAbove cubic-bezier(0, 0, 0, 1) 1s 1000ms forwards; }
+      .WebsiteSection__Label {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(90deg);
+        font-size: 1.2rem; }
+      .WebsiteSection__Icon {
+        position: absolute;
+        left: 50%;
+        top: 60px;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        font-size: 1.2rem; } }
+
+.Button {
+  background-color: #fff;
+  width: 200px;
+  height: 60px;
+  font-size: 1rem;
+  font-family: "Space Mono", monospace;
+  cursor: pointer;
+  border: 1px solid #000;
+  transition: all ease-in 200ms; }
+  @media (hover: hover) and (pointer: fine) {
+    .Button:hover {
+      color: #fff;
+      background-color: #000; } }
+
+@keyframes slideFromAbove {
+  100% {
+    transform: translateY(0); } }
+
+.Home {
+  display: grid;
+  grid-template-columns: 1rem 1fr 1rem;
+  grid-column-gap: 60px;
+  grid-template-rows: auto;
+  overflow-y: auto; }
+  @media screen and (min-width: 769px) {
+    .Home {
+      grid-template-columns: 0 repeat(6, 1fr) 0; } }
+  .Home::-webkit-scrollbar {
+    width: 0;
+    height: 0; }
+  .Home .Header {
+    grid-column: 1 / -1;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 1.2; }
+    .Home .Header__Title {
+      opacity: 0;
+      animation: fadeIn ease-in 1s 2s forwards; }
+    .Home .Header__Logo {
+      position: absolute;
+      left: 0;
+      top: 6%;
+      transform: translateX(60px);
+      opacity: 0;
+      animation: fadeIn ease-in 1s forwards; }
+    .Home .Header__Link {
+      color: #000;
+      text-decoration: none;
+      border-bottom: none;
+      position: relative;
+      background: linear-gradient(45deg, rgba(255, 255, 255, 0) 45%, #ffb400 49%, #ffb400 51%, rgba(255, 255, 255, 0) 55%) 10px bottom repeat-x, linear-gradient(-45deg, rgba(255, 255, 255, 0) 45%, #ffb400 49%, #ffb400 51%, rgba(255, 255, 255, 0) 55%) 0 bottom repeat-x;
+      background-size: 20px 10px;
+      animation: moveRight 20s linear infinite; }
+    @media screen and (min-width: 769px) {
+      .Home .Header {
+        grid-column: 2 / 8;
+        font-size: 4rem;
+        line-height: 1; }
+        .Home .Header__Title {
+          padding: 12rem 0 7rem;
+          max-width: 70%;
+          opacity: 0;
+          animation: fadeIn ease-in 1s 2s forwards; } }
+  .Home .HeaderImage {
+    grid-column: 1 / -1;
+    background: url("/images/header-image.jpg") center center no-repeat;
+    background-size: cover;
+    min-height: 1000px;
+    width: 100%;
+    opacity: 0;
+    transition: opacity ease-in 1s; }
+  .Home .makeVisible {
+    opacity: 1; }
+  .Home .SecondaryHeading {
+    grid-column: 2 / 8;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 300;
+    font-size: 7rem;
+    padding-top: 20px; }
+  .Home .Card--First {
+    grid-column: 2 / 4; }
+  .Home .Card--Second {
+    grid-column: 4 / 6; }
+  .Home .Card--Third {
+    grid-column: 6 / 8; }
+  .Home .Card__Title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 7rem;
+    line-height: 0.8;
+    text-align: center; }
+  .Home .Card__Image {
+    width: 100%;
+    overflow: hidden; }
+    .Home .Card__Image img {
+      width: 100%;
+      height: auto; }
+  .Home .Card__Text {
+    padding-top: 20px; }
+  .Home .MarketEvents {
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .Home .Events {
+    grid-column: 2 / 8;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 2rem;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 50%, black 50%) 0 0 repeat-x, linear-gradient(90deg, rgba(255, 255, 255, 0) 50%, black 50%) 0 10% repeat-x, linear-gradient(90deg, rgba(255, 255, 255, 0) 50%, black 50%) 0 90% repeat-x, linear-gradient(90deg, rgba(255, 255, 255, 0) 50%, black 50%) 0 100% repeat-x;
+    background-size: 20px 1px;
+    animation: slideRight 40s linear infinite; }
+    .Home .Events .Button {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 30%); }
+  .Home .Event {
+    flex: 1;
+    padding: 50px 0;
+    font-size: 1rem; }
+    .Home .Event__Date {
+      font-size: 0.7rem; }
+    .Home .Event__Text {
+      text-align: center; }
+  .Home .AddressText,
+  .Home .SocialMediaCard,
+  .Home .Newsletter {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 50%, black 50%) top left repeat-x, linear-gradient(0deg, rgba(255, 255, 255, 0) 50%, black 50%) 100% 0 repeat-y, linear-gradient(90deg, rgba(255, 255, 255, 0) 50%, black 50%) 0 100% repeat-x, linear-gradient(0deg, rgba(255, 255, 255, 0) 50%, black 50%) 0 100% repeat-y;
+    background-size: 20px 1px, 1px 20px, 20px 1px, 1px 20px; }
+  .Home .AddressText {
+    grid-column: 2 / 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 5rem;
+    text-align: center;
+    font-weight: 300;
+    margin-top: 5rem;
+    padding: 2rem; }
+  .Home .AddressMap {
+    grid-column: 5 / 8;
+    margin-top: 5rem;
+    min-height: 350px;
+    width: auto;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 50%, black 50%) top left repeat-x, linear-gradient(0deg, rgba(255, 255, 255, 0) 50%, black 50%) 100% 0 repeat-y, linear-gradient(90deg, rgba(255, 255, 255, 0) 50%, black 50%) 0 100% repeat-x, linear-gradient(0deg, rgba(255, 255, 255, 0) 50%, black 50%) 0 100% repeat-y, url("/images/map.jpg") center center no-repeat;
+    background-size: 20px 1px, 1px 20px, 20px 1px, 1px 20px, cover; }
+  .Home .Vendor {
+    grid-column: 2 / 8;
+    margin-top: 5rem;
+    padding: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0) 49%, black 49%, black 51%, rgba(255, 255, 255, 0) 51%) 10px top repeat-x, linear-gradient(45deg, rgba(255, 255, 255, 0) 49%, black 49%, black 51%, rgba(255, 255, 255, 0) 51%) 10px bottom repeat-x;
+    background-size: 10px 20px; }
+    .Home .Vendor__Title {
+      display: block;
+      font-size: 2.5rem;
+      font-family: "Cormorant Garamond", serif; }
+    .Home .Vendor .Button {
+      margin-top: 20px; }
+  .Home .SocialMediaCard {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    text-align: center;
+    padding: 1rem; }
+    .Home .SocialMediaCard--First {
+      grid-column: 2 / 4; }
+    .Home .SocialMediaCard--Second {
+      grid-column: 4 / 6; }
+    .Home .SocialMediaCard--Third {
+      grid-column: 6 / 8; }
+  .Home .Newsletter {
+    grid-column: 2 / 8;
+    margin-top: 5rem;
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center; }
+    .Home .Newsletter__Text {
+      font-family: "Space Mono", monospace;
+      font-size: 1.4rem;
+      max-width: 40%;
+      padding-right: 50px; }
+    .Home .Newsletter__Input {
+      flex: 1;
+      position: relative; }
+      .Home .Newsletter__Input input {
+        width: 100%;
+        min-height: 60px;
+        border: 1px solid #000;
+        padding: 0 50px;
+        box-sizing: border-box;
+        color: #000;
+        font-family: "Space Mono", monospace;
+        border-radius: 0; }
+        .Home .Newsletter__Input input:focus-visible {
+          outline: none; }
+      .Home .Newsletter__Input::after {
+        content: "\21E3";
+        position: absolute;
+        top: 50%;
+        right: 50px;
+        transform: translate(0, -50%) rotate(-90deg);
+        font-size: 2rem; }
+  .Home .Footer {
+    margin: 5rem 0;
+    grid-column: 2 / 8; }
+
+@keyframes slideRight {
+  0% {
+    background-position: 0 0, 0 10%, 0 90%, 0 100%; }
+  100% {
+    background-position: 100% 0, 100% 10%, 100% 90%, 100% 100%; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes rollRight {
+  0% {
+    background-position: top left, 100% 0, 0 100%, 0 100%; }
+  100% {
+    background-position: top right, 100% 100%, 100% 0, 100% 100%; } }

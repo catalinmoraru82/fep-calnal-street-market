@@ -1,0 +1,302 @@
+$columnGap: 60px;
+
+.Home {
+    display: grid;
+    grid-template-columns: 1rem 1fr 1rem;
+    grid-column-gap: $columnGap;
+    grid-template-rows: auto;
+    overflow-y: auto;
+
+    @media screen and (min-width: $bp-md) {
+       grid-template-columns: 0 repeat(6, 1fr) 0;
+
+    }
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+    .Header {
+        grid-column: 1 / -1;
+        font-family: $secondaryFont;
+        font-weight: 300;
+        font-size: 2rem;
+        line-height: 1.2;
+        &__Title {
+            // padding: 12rem 50px;
+            // width: 70%;
+            opacity: 0;
+            animation: fadeIn ease-in 1s 2s forwards;
+        }
+        &__Logo {
+            position: absolute;
+            left: 0;
+            top: 6%;
+            transform: translateX($columnGap);
+            opacity: 0;
+            animation: fadeIn ease-in 1s forwards;
+        }
+        &__Link {
+            color: $color-black;
+            text-decoration: none;
+            border-bottom: none;
+            position: relative;
+            background: linear-gradient(
+                        45deg,
+                        rgba($color-white, 0) 45%,
+                        rgba($color-gold, 1) 49%,
+                        rgba($color-gold, 1) 51%,
+                        rgba($color-white, 0) 55%
+                    )
+                    10px bottom repeat-x,
+                linear-gradient(-45deg, rgba($color-white, 0) 45%, rgba($color-gold, 1) 49%, rgba($color-gold, 1) 51%, rgba($color-white, 0) 55%) 0
+                    bottom repeat-x;
+            background-size: 20px 10px;
+            animation: moveRight 20s linear infinite;
+        }
+        @media screen and (min-width: $bp-md) {
+            grid-column: 2 / 8;
+            font-size: 4rem;
+            line-height: 1;
+            &__Title {
+                padding: 12rem 0 7rem;
+                max-width: 70%;
+                opacity: 0;
+                animation: fadeIn ease-in 1s 2s forwards;
+            }
+        }
+    }
+
+    //@keyframes moveRight {
+    //    100% {
+    //        background-position: calc(10px + 110%) bottom, 100% bottom;
+    //    }
+    //}
+    .HeaderImage {
+        grid-column: 1 / -1;
+        background: url("/images/header-image.jpg") center center no-repeat;
+        background-size: cover;
+        min-height: 1000px;
+        width: 100%;
+        opacity: 0;
+        transition: opacity ease-in 1s;
+    }
+    .makeVisible {
+        opacity: 1;
+    }
+    .SecondaryHeading {
+        grid-column: 2 / 8;
+        font-family: $secondaryFont;
+        font-weight: 300;
+        font-size: 7rem;
+        padding-top: 20px;
+    }
+    .Card {
+        &--First {
+            grid-column: 2 / 4;
+        }
+        &--Second {
+            grid-column: 4 / 6;
+        }
+        &--Third {
+            grid-column: 6 / 8;
+        }
+        &__Title {
+            font-family: $secondaryFont;
+            font-size: 7rem;
+            line-height: 0.8;
+            text-align: center;
+        }
+        &__Image {
+            width: 100%;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        &__Text {
+            padding-top: 20px;
+        }
+    }
+    .MarketEvents {
+        min-height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .Events {
+        grid-column: 2 / 8;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        margin-top: 2rem;
+        background: linear-gradient(90deg, rgba($color-white, 0) 50%, rgba($color-black, 1) 50%) 0 0 repeat-x,
+            linear-gradient(90deg, rgba($color-white, 0) 50%, rgba($color-black, 1) 50%) 0 10% repeat-x,
+            linear-gradient(90deg, rgba($color-white, 0) 50%, rgba($color-black, 1) 50%) 0 90% repeat-x,
+            linear-gradient(90deg, rgba($color-white, 0) 50%, rgba($color-black, 1) 50%) 0 100% repeat-x;
+        background-size: 20px 1px;
+        animation: slideRight 40s linear infinite;
+        .Button {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 30%);
+        }
+    }
+
+    .Event {
+        flex: 1;
+        padding: 50px 0;
+        font-size: 1rem;
+        &__Date {
+            font-size: 0.7rem;
+        }
+        &__Text {
+            text-align: center;
+        }
+    }
+    .AddressText,
+    .SocialMediaCard,
+    .Newsletter {
+        background: linear-gradient(90deg, rgba($color-white, 0) 50%, rgba($color-black, 1) 50%) top left repeat-x,
+            linear-gradient(0deg, rgba($color-white, 0) 50%, rgba($color-black, 1) 50%) 100% 0 repeat-y,
+            linear-gradient(90deg, rgba($color-white, 0) 50%, rgba($color-black, 1) 50%) 0 100% repeat-x,
+            linear-gradient(0deg, rgba($color-white, 0) 50%, rgba($color-black, 1) 50%) 0 100% repeat-y;
+        background-size: 20px 1px, 1px 20px, 20px 1px, 1px 20px;
+    }
+    .AddressText {
+        grid-column: 2 / 5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: $secondaryFont;
+        font-size: 5rem;
+        text-align: center;
+        font-weight: 300;
+        margin-top: 5rem;
+        padding: 2rem;
+    }
+    .AddressMap {
+        grid-column: 5 / 8;
+        margin-top: 5rem;
+        min-height: 350px;
+        width: auto;
+        background: linear-gradient(90deg, rgba($color-white, 0) 50%, rgba($color-black, 1) 50%) top left repeat-x,
+            linear-gradient(0deg, rgba($color-white, 0) 50%, rgba($color-black, 1) 50%) 100% 0 repeat-y,
+            linear-gradient(90deg, rgba($color-white, 0) 50%, rgba($color-black, 1) 50%) 0 100% repeat-x,
+            linear-gradient(0deg, rgba($color-white, 0) 50%, rgba($color-black, 1) 50%) 0 100% repeat-y,
+            url("/images/map.jpg") center center no-repeat;
+        background-size: 20px 1px, 1px 20px, 20px 1px, 1px 20px, cover;
+    }
+    .Vendor {
+        grid-column: 2 / 8;
+        margin-top: 5rem;
+        padding: 5rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(45deg, rgba($color-white, 0) 49%, rgba($color-black, 1) 49%, rgba($color-black, 1) 51%, rgba($color-white, 0) 51%)
+                10px top repeat-x,
+            linear-gradient(45deg, rgba($color-white, 0) 49%, rgba($color-black, 1) 49%, rgba($color-black, 1) 51%, rgba($color-white, 0) 51%) 10px
+                bottom repeat-x;
+        background-size: 10px 20px;
+        &__Title {
+            display: block;
+            font-size: 2.5rem;
+            font-family: $secondaryFont;
+        }
+        .Button {
+            margin-top: 20px;
+        }
+    }
+    .SocialMediaCard {
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 200px;
+        text-align: center;
+        padding: 1rem;
+        &--First {
+           grid-column: 2 / 4;
+        }
+        &--Second {
+           grid-column: 4 / 6;
+        }
+        &--Third {
+           grid-column: 6 / 8;
+        }
+    }
+    .Newsletter {
+        grid-column: 2 / 8;
+        margin-top: 5rem;
+        padding: 2rem 3rem;
+        display: flex;
+        align-items: center;
+        &__Text {
+            font-family: $mainFont;
+            font-size: 1.4rem;
+            max-width: 40%;
+            padding-right: 50px;
+        }
+        &__Input {
+            flex: 1;
+            position: relative;
+            input {
+                width: 100%;
+                min-height: 60px;
+                border: 1px solid $color-black;
+                padding: 0 50px;
+                box-sizing: border-box;
+                color: $color-black;
+                font-family: $mainFont;
+                border-radius: 0;
+                &:focus-visible {
+                    outline: none;
+                }
+            }
+            &::after {
+                content: "\21E3";
+                position: absolute;
+                top: 50%;
+                right: 50px;
+                transform: translate(0, -50%) rotate(-90deg);
+                font-size: 2rem;
+            }
+        }
+    }
+    .Footer {
+        margin: 5rem 0;
+        grid-column: 2 / 8;
+    }
+}
+
+//Animations
+@keyframes slideRight {
+    0% {
+        background-position: 0 0, 0 10%, 0 90%, 0 100%;
+    }
+    100% {
+        background-position: 100% 0, 100% 10%, 100% 90%, 100% 100%;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes rollRight {
+    0% {
+        background-position: top left, 100% 0, 0 100%, 0 100%;
+    }
+    100% {
+        background-position: top right, 100% 100%, 100% 0, 100% 100%;
+    }
+}

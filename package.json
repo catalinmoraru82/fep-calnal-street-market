@@ -1,0 +1,16 @@
+{
+  "name": "fep-canal-street",
+  "version": "1.0.0",
+  "description": "Loosey Goosey project for my Portofolio, from Frontend Practice",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.html",
+    "sass": "node-sass --watch --recursive scss --output css"
+  },
+  "author": "Catalin Moraru",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^7.0.3",
+    "normalize.css": "^8.0.1"
+  }
+}

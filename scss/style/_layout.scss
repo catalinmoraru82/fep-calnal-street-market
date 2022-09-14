@@ -1,0 +1,101 @@
+$numberOfSections: 3;
+$sectionClosedWidth: 65px;
+
+h1 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+h2 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.Main {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    color: $color-black;
+    font-family: $mainFont;
+    font-size: 14px;
+}
+
+.Home {
+    width: 100%;
+}
+
+.WebsiteSection {
+
+    display: none;
+
+    @media screen and (min-width: $bp-md) {
+        position: relative;
+        width: $sectionClosedWidth;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &--Food {
+            background-color: $color-blue;
+            transform: translateY(-100%);
+            animation: slideFromAbove cubic-bezier(0, 0, 0, 1) 1s 1500ms forwards;
+        }
+        &--Retail {
+            background-color: $color-red;
+            transform: translateY(-100%);
+            animation: slideFromAbove cubic-bezier(0, 0, 0, 1) 1s 1300ms forwards;
+        }
+        &--Community {
+            background-color: $color-gold;
+            transform: translateY(-100%);
+            animation: slideFromAbove cubic-bezier(0, 0, 0, 1) 1s 1000ms forwards;
+        }
+        &__Label {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(90deg);
+            font-size: 1.2rem;
+        }
+        &__Icon {
+            position: absolute;
+            left: 50%;
+            top: 60px;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.Button {
+    background-color: $color-white;
+    width: 200px;
+    height: 60px;
+    font-size: 1rem;
+    font-family: $mainFont;
+    cursor: pointer;
+    border: 1px solid $color-black;
+    transition: all ease-in 200ms;
+    @media (hover:hover) and (pointer:fine) {
+        &:hover {
+            color: $color-white;
+            background-color: $color-black;
+        }
+    }
+}
+
+
+@keyframes slideFromAbove {
+    100% {
+        transform: translateY(0);
+    }
+}
